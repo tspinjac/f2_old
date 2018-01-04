@@ -1,0 +1,213 @@
+/* 
+CSS za projekt "Fallout 2 tribute page" - Multimedijski sustavi 
+v 1.0   studeni 2017.
+v 2.0	prosinac 2017.	
+*/
+
+body {
+	font-family: Monospace;
+	font-size: 1.3em;
+	color:lime;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: black;
+	box-sizing: border-box;	
+}
+
+header {
+	position: relative;
+	height: 250px;
+	max-width: 800px;
+	background-image: url("../img/jpg/Header_logo2.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    margin:0 auto;
+    margin-top:10px;
+    border-radius: 10px;
+    padding:5px;
+    box-sizing: content-box;
+    overflow: auto;
+}
+header h1 { float:right; margin:20px; color: white;} 
+header p {  margin-left:20%; font-size: 1.5em;color: lime;}
+.Interplay {float:right; position:relative; z-index: -1;  margin-left:10px; }
+
+/* NAV */
+#pomocna {width: 100%;  height: 50px; margin-top:20px; margin-bottom:40px;}
+#pomocna > ul { opacity:0.8; margin:0; padding: 0; max-width:100%; text-align: center}
+#pomocna ul li { z-index:-1; transition: all 1s ease-in-out; opacity:0.7; position: relative; display:inline-block; width: 180px; height: 40px;
+ background-image: url("../img/gif/intro.gif");
+ background-size: 200px;
+ background-repeat: no-repeat;
+ background-position: center center;
+}
+#pomocna > ul li:hover {opacity:1; transform: scale(1.3); z-index: 1; }
+#pomocna li a {text-decoration: none; position: absolute; top:6px; left:50px;color:lime; font-size: 1.2em; }
+
+/* Main content, neki tweekovi */
+span.blink {animation: blink 1s infinite;}
+@keyframes blink{to{opacity: .0;}}
+/* GALLERY */
+ /* opcije: 1) clearfif; 2) clear:both u block elementu ispod floatanih (npr. dodas br sa clear both); 3) overflow:auto za parent element!  clearfix za gallery, nešto bolje rješenje od običnog clear:both ; clear:both can be applied to any block-level element */
+body > main > div.container > h2 > a {color:yellow;}
+
+/* Embeded video */
+#video {text-align: center;}
+iframe {max-width: 100%;}
+
+#aiming, #car, #skills {
+	display: block;
+    float: none;
+    margin: 0 auto;
+    width:100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    border:none;
+}
+
+main {margin:10px;}
+main h2 {text-align: center;}
+main p.uvod {text-transform: uppercase;text-align: justify; max-width:500px; margin:0 auto; margin-bottom:50px; color:yellow; font-size: 1em;}
+main .articles .prvi, .treci { border-left: 3px solid white; border-top:3px solid white;border-bottom:3px solid white;  text-align: justify; margin: 20px 0; border-radius: 25px;padding:10px;}
+main .articles .drugi, .cetvrti {border-right: 3px solid white; border-bottom: 3px solid white;border-top:3px solid white;text-align: justify; margin: 20px 0; border-radius: 25px;padding:10px;}
+body > main > section > article > h3{  margin: 11px 0 17px 0;
+  font-size:2em;
+  line-height: 1em;
+  color: #f1ebe5;
+  text-shadow: 0 13.36px 8.896px #c4b59d,0 -2px 1px #fff;
+  letter-spacing: -4px; }
+main .articles a {color:yellow; }
+main .articles .prvi img, main .articles .treci img {width:120px; height: 120px; float:right; border-radius:50%; shape-outside: ellipse(); border: 2px dashed red; margin-left:5px;}	 
+main .articles .drugi img, main .articles .cetvrti img {width:120px; height: 120px; float:left; border-radius:50%; shape-outside: ellipse(); border: 2px dashed red; margin-right: 5px;}
+
+/*  Floatbox 
+/* opcije: 1) clearfif; 2) clear:both u block elementu ispod floatanih (npr. dodas br sa clear both); 3) overflow:auto za parent element!  clearfix za gallery, nešto bolje rješenje od običnog clear:both ; clear:both can be applied to any block-level element!
+*/
+.floatBox {max-width:100%; border: 2px solid yellow; border-radius: 10px; }
+.floatBox > h2 {margin-left:20px; color: white;}
+.floatBox article { text-align: center;float:left; margin:5px;height:270px; width:calc(33.3333% - 14px); border:2px solid white; min-height: 150px;}
+.floatBox::after { content: ""; display: table; clear: both;} /* fix (clear) za float!*/
+body > main > section.floatBox > h2 > a {color:yellow;}
+.floatBox article a {color:lime;}
+.floatBox article img {display:inline-block;max-width: 100%;}
+body > main > section.floatBox > article > a > img {padding:10px; box-sizing:border-box; transition: all .5s ease-in-out;}
+body > main > section.floatBox > article > a > img:hover {transform: scale(1.1);}
+
+/* MAPA - to do */
+#mapa {margin-top: 50px; border-top:3px solid white; overflow: hidden;}
+#mapa h2 {color:lime; font-size: 1.3em; text-align: center;}
+#mapa > h2 > a {color:yellow;}
+#mapa .mapa img { max-width: 99%; display:block; margin:0 auto; border:2px solid lime;border-radius: 10px; }
+
+/*ASIDE*/
+.pquote {	float:left; max-width: 400px; color: lime;	font-size: 1.5em; line-height: 0.9;	padding: 5px;
+			border:2px dotted red;
+			margin:8px;
+			text-align: center;
+			border-radius: 10px;
+		}
+
+blockquote { margin: 0;}
+blockquote a {color:yellow;}
+.pquote p:first-letter {font-size: 39px;font-weight: bold;}
+
+/* FOOTER */
+footer { padding-top:40px; background-image: url("../img/jpg/footer_bg2.png");background-repeat:no-repeat; background-size:contain; background-position: right; margin-top:20px;  text-align: center; margin-bottom: 50px; border-radius: 10px; color: lime; font-size: 1em;}
+footer { color:white; text-transform: uppercase; border:2px solid white; width: 98%; margin:0 auto;}
+body > footer > p:nth-child(4) { float:left; margin-left:20px; transition: all .5s ease-in-out;}
+body > footer > p:nth-child(4):hover {transform: scale(1.2);}
+body > footer > p:nth-child(4) a {color:yellow; }
+
+
+/* GALERIJA - preuzeto sa https://codepen.io/phileflanagan/pen/QgPdwz, prilagođeno*/
+body > main > div.container > h2 > a {color:yellow;} /* TOP u galeriji*/
+
+.container {
+	margin: 0 auto;
+    width: 98%;
+    min-width: 98%;  
+    background-color: transparent;
+    margin-top: 50px;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+/* Useful Classes */
+.xy-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.transition {transition: all 350ms ease-in-out;}
+
+.r-3-2 {
+	width: 100%;
+	padding-bottom: 66.667%;
+	background-color: #ddd;
+}
+
+.image-holder {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 0px auto;
+}
+
+/* Main Styles */
+.gallery-wrapper {
+	position: relative;
+	margin:0 auto;
+}
+
+.gallery {
+	position: relative;
+	white-space: nowrap;
+	font-size: 0;
+}
+
+.item-wrapper {
+	cursor: pointer;
+    width: 10%;
+    display: inline-block;
+    background-color: white;
+}
+
+.gallery-item { opacity: 0.5; }
+.gallery-item.active { opacity: 1; }
+
+.controls {
+	display: none; 
+	font-size: 0;
+	border-top: none;
+}
+.move-btn {
+	display: inline-block;
+	width: 50%;
+	border: none;
+ 	color: #ccc;
+	background-color: transparent;
+	padding: 0.2em 1.5em;
+}
+.move-btn:first-child {border-right: none;}
+.move-btn.left  { cursor: w-resize; }
+.move-btn.right { cursor: e-resize; }
+/* KRAJ GALERIJE*/
+
+/**** MEDIAQUERIES ****/
+
+/*Mediaquery za menu*/
+@media (max-width: 386px) {
+    #pomocna { margin-bottom:140px;}
+    }
+
+/* Media za floatbox..<580px:    float:none;*/
+@media (min-width: 387px) and (max-width: 767px){
+  	.floatBox article {float:none; text-align: center; height:300px; font-size:1.3em; width:calc(100% - 14px); border:2px solid white; min-height: 150px;}
+	.floatBox article p { font-size: 1.2em; color: lime; margin-top:-10px;}
+}
+
